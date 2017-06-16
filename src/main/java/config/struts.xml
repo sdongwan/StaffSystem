@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <!--开启动态方法调用-->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+
+    <!--设置后缀-->
+    <constant name="struts.action.extension" value="action,jsp"/>
+
+    <!--struts交给spring控制生成bean-->
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <package name="default" extends="struts-default" namespace="/">
+
+        <default-action-ref name="default"/>
+
+        <action name="default">
+            <result name="success">/WEB-INF/error.jsp</result>
+        </action>
+
+        <action name="login">
+            <result name="success">/login.jsp</result>
+        </action>
+
+        <action name="registAdmin" class="action.RegistAdminAction">
+            <result name="success" type="chain">adminValide</result>
+            <result name="input">/WEB-INF/registAdmin.jsp</result>
+        </action>
+
+        <action name="adminValide" class="action.AdminLoginAction" method="adminLogin">
+            <result name="success">/WEB-INF/admin/index.jsp</result>
+            <result name="input">/login.jsp</result>
+        </action>
+
+
+    </package>
+
+
+    <include file="config/post_struts.xml"/>
+    <include file="config/user_struts.xml"/>
+    <include file="config/admin_struts.xml"/>
+
+</struts>

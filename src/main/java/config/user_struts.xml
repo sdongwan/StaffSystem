@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+    <package name="post" extends="struts-default" namespace="/user">
+        <action name="showUsers" class="action.ShowUsersAction">
+            <result name="success">/WEB-INF/user/showUsers.jsp</result>
+        </action>
+
+        <action name="addUser" class="action.AddUserAction">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg</param>
+                <param name="maximumSize">1024*1024</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+
+            <param name="savePath">/WEB-INF/upload</param>
+            <result name="success" type="chain">showUsers</result>
+            <result name="input">/WEB-INF/user/addUser.jsp</result>
+        </action>
+
+
+        <action name="showUser" class="action.ShowUserAction">
+            <result name="success">/WEB-INF/user/upUser.jsp</result>
+            <!--<result name="input">/WEB-INF/error.jsp</result>-->
+        </action>
+
+
+        <action name="upUser" class="action.UpUserAction">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg</param>
+                <param name="maximumSize">1024*1024</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <param name="savePath">/upload</param>
+            <result name="success" type="chain">showUsers</result>
+            <result name="input">/WEB-INF/user/upUser.jsp</result>
+        </action>
+
+
+        <action name="delUser" class="action.DelUserAction">
+            <result name="success" type="chain">showUsers</result>
+            <result name="input">/error.jsp</result>
+        </action>
+
+
+        <action name="addUserInfo">
+            <result name="success">/WEB-INF/user/addUser.jsp</result>
+        </action>
+
+
+    </package>
+
+</struts>

@@ -1,0 +1,71 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+
+    <class name="User" table="user">
+        <id name="userId" type="java.lang.Integer">
+            <column name="userId"/>
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="post" class="entity.Post" cascade="save-update">
+            <column name="postId" not-null="true">
+                <comment>部门编号</comment>
+            </column>
+        </many-to-one>
+
+
+        <property name="name" type="java.lang.String">
+            <column name="name" length="50" not-null="true">
+                <comment>员工姓名</comment>
+            </column>
+
+        </property>
+
+        <property name="username" type="java.lang.String">
+            <column name="username" not-null="true" length="50" unique="true">
+                <comment>员工登录用户名</comment>
+            </column>
+        </property>
+
+        <property name="userPass" type="java.lang.String">
+            <column name="userPass" not-null="true" length="50">
+                <comment>员工登录密码</comment>
+            </column>
+        </property>
+
+        <property name="sex" type="java.lang.String">
+            <column name="sex" length="2" not-null="true">
+                <comment>员工性别</comment>
+            </column>
+        </property>
+
+
+        <property name="birthday" type="java.util.Date">
+            <column name="birthday" length="10" not-null="true">
+                <comment>员工出生日期</comment>
+            </column>
+        </property>
+
+        <property name="entryDate" type="java.util.Date">
+            <column name="entryDate" length="10" not-null="true">
+                <comment>员工入职日期</comment>
+            </column>
+        </property>
+
+        <property name="photo" type="java.lang.String">
+            <column name="photo" length="100" not-null="true">
+                <comment>员工头像地址</comment>
+            </column>
+
+        </property>
+
+        <property name="remark" type="java.lang.String">
+            <column name="remark" length="200">
+                <comment>个人介绍</comment>
+            </column>
+        </property>
+
+    </class>
+</hibernate-mapping>

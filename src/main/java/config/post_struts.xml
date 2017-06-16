@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+    <package name="user" extends="struts-default" namespace="/dept">
+        <action name="showDepts" class="action.ShowPostsAction">
+            <result name="success">/WEB-INF/dept/showDepts.jsp</result>
+        </action>
+
+
+        <action name="addPost" class="action.AddPostAction">
+            <result name="success" type="chain">showDepts</result>
+            <result name="input" >/WEB-INF/dept/addPost.jsp</result>
+        </action>
+
+        <action name="showPost" class="action.ShowPostAction">
+            <result name="success">/WEB-INF/dept/upPost.jsp</result>
+            <result name="input">/WEB-INF/error.jsp</result>
+        </action>
+
+
+        <action name="updatePost" class="action.UpdatePostAction">
+            <result name="success" type="chain">showDepts</result>
+            <result name="input">/WEB-INF/dept/upPost.jsp</result>
+        </action>
+
+
+        <action name="delPost" class="action.DelPostAction">
+            <result name="success" type="chain">showDepts</result>
+            <result name="input">/WEB-INF/error.jsp</result>
+        </action>
+
+
+        <action name="addDept">
+            <result name="success">/WEB-INF/dept/addPost.jsp</result>
+        </action>
+
+
+    </package>
+</struts>

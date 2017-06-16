@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+    <package name="regist" extends="struts-default" namespace="/admin">
+
+
+        <action name="updateAdmin" class="action.UpdateAdminAction">
+            <result name="input">/WEB-INF/admin/updateAdmin.jsp</result>
+            <result name="success">/WEB-INF/admin/index.jsp</result>
+        </action>
+
+        <action name="toBackAdmin">
+            <result name="success">/WEB-INF/admin/main.jsp</result>
+        </action>
+
+
+        <action name="header">
+            <result name="success">/WEB-INF/admin/header.jsp</result>
+        </action>
+        <action name="menu">
+            <result name="success">/WEB-INF/admin/menu.jsp</result>
+        </action>
+        <action name="main">
+            <result name="success">/WEB-INF/admin/main.jsp</result>
+        </action>
+
+        <action name="footer">
+            <result name="success">/WEB-INF/admin/footer.jsp</result>
+        </action>
+
+        <action name="logout">
+            <result name="success">/WEB-INF/admin/logout.jsp</result>
+        </action>
+
+
+        <action name="upload" class="action.UpLoadPhotoAction">
+            <result name="success">/WEB-INF/upload/${photo}</result>
+        </action>
+
+
+    </package>
+
+</struts>
