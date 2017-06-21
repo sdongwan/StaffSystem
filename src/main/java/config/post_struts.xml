@@ -12,8 +12,9 @@
 
         <action name="addPost" class="action.AddPostAction">
             <result name="success" type="chain">showDepts</result>
-            <result name="input" >/WEB-INF/dept/addPost.jsp</result>
+            <result name="input">/WEB-INF/dept/addPost.jsp</result>
         </action>
+
 
         <action name="showPost" class="action.ShowPostAction">
             <result name="success">/WEB-INF/dept/upPost.jsp</result>

@@ -42,11 +42,22 @@
             margin-top: 35px;
             margin-left: 35px;
         }
+
+        .error {
+            margin-left: 150px;
+            margin-top: 100px;
+            position: absolute;
+        }
+
     </style>
 </head>
 <body>
 
 <div class="position"><span>当前位置：修改部门信息</span></div>
+
+<div class="error">
+    <s:fielderror name="post.postName" cssStyle="color:red;"/>
+</div>
 
 <form action="<%=contextPath%>/dept/updatePost.jsp" method="post">
     <table class="table">
@@ -81,9 +92,7 @@
                 <input type="text" name="post.postRemark" value="${post.postRemark}"/>
 
             </td>
-            <td>
-                <s:actionerror cssStyle="color: red"/>
-            </td>
+
         </tr>
 
         <tr>

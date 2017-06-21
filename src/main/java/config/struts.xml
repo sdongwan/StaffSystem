@@ -17,7 +17,7 @@
         <default-action-ref name="default"/>
 
         <action name="default">
-            <result name="success">/WEB-INF/error.jsp</result>
+            <result name="success">/WEB-INF/404.jsp</result>
         </action>
 
         <action name="login">

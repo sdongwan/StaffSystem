@@ -53,7 +53,7 @@
 
         .error {
             margin-left: 150px;
-            margin-top: 100px;
+            margin-top: 70px;
             position: absolute;
         }
 
@@ -63,8 +63,8 @@
 <body>
 <div class="position"><span>当前位置：添加部门</span></div>
 <div class="error">
-
     <s:fielderror name="post.postName"/>
+    <%--<s:fielderror name="post.postRemark"/>--%>
 </div>
 <form action="<%=contextPath%>/dept/addPost.jsp" method="post">
 

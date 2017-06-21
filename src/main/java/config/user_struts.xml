@@ -24,7 +24,7 @@
 
         <action name="showUser" class="action.ShowUserAction">
             <result name="success">/WEB-INF/user/upUser.jsp</result>
-            <!--<result name="input">/WEB-INF/error.jsp</result>-->
+            <!--<result name="input">/WEB-404.jsp.jsp</result>-->
         </action>
 
 

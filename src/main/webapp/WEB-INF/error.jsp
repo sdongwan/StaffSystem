@@ -1,9 +1,9 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="a" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2017/6/10
-  Time: 21:38
+  Date: 2017/6/21
+  Time: 16:38
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,6 +12,6 @@
     <title>错误界面</title>
 </head>
 <body>
-<h3>你访问的界面不存在，请确保url输入正确！</h3>
+<a:actionerror/>
 </body>
 </html>

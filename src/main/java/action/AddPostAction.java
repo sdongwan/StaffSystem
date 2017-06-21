@@ -35,6 +35,7 @@ public class AddPostAction extends ActionSupport {
     @Override
     public String execute() throws Exception {
 
+
         if (postService.isExist(post.getPostName())) {
             this.addFieldError("post.postName", "该部门已经存在");
             return INPUT;

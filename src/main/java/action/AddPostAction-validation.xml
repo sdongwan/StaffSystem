@@ -9,4 +9,9 @@
         </field-validator>
     </field>
 
+    <field name="post.postRemark">
+        <field-validator type="requiredstring">
+            <message>请填写部门描述信息</message>
+        </field-validator>
+    </field>
 </validators>

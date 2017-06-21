@@ -37,12 +37,13 @@ public class DelPostAction extends ActionSupport {
     public String execute() throws Exception {
         if (postService.isDel(postId)) {
             Post post = postService.showByPostId(postId);
-            System.out.println("delete" + post);
+            System.out.println("delete" + "成功");
             postService.delPost(post);
 
             return SUCCESS;
 
         } else {
+            System.out.println("delete" + "失败");
             addActionError("该部门有员工，删除失败");
             return INPUT;
         }

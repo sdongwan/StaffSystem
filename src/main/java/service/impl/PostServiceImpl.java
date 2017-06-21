@@ -77,7 +77,7 @@ public class PostServiceImpl implements PostService {
             flag = false;
         }
 
-        return true;
+        return flag;
     }
 
     public int getPostUserCount(Integer postId) {

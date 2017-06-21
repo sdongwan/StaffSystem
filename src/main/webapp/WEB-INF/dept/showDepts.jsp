@@ -1,3 +1,6 @@
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="service.PostService" %>
 <%@ taglib prefix="c" uri="/struts-tags" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
@@ -12,6 +15,27 @@
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/";
     String contextPath = request.getServletContext().getContextPath();
+
+//    PostDao postDao=new PostDaoImpl();
+
+
+%>
+
+<%!
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/applicationContext.xml");
+
+    PostService postService = (PostService) applicationContext.getBean("postService");
+
+%>
+<%!
+    private boolean isCanDelete(int postId) {
+
+        System.out.println("postId " + postId);
+        if (postService.isDel(postId)) {
+            return true;
+        }
+        return false;
+    }
 %>
 <html>
 <head>
@@ -57,6 +81,12 @@
             margin-right: 35px;
         }
 
+        .error {
+            margin-left: 150px;
+            margin-top: 100px;
+            position: absolute;
+        }
+
         table {
             position: absolute;
             border: 1px solid #888888;
@@ -82,9 +112,12 @@
 
 <div class="position"><span>当前位置：部门管理</span></div>
 <div class="right_post">
-    <a href="<%=contextPath%>/dept/addPost.jsp">添加部门</a>
+    <a href="<%=contextPath%>/dept/addDept.jsp">添加部门</a>
 </div>
 
+<div class="error">
+    <s:fielderror name="post.postName"/>
+</div>
 
 <table class="table">
     <tr>
@@ -105,7 +138,7 @@
                 <s:param name="postId" value="#post.postId"/>
                 <a href="<%=contextPath%>/dept/showPost.jsp?postId=<%=request.getAttribute("postId")%>">修改</a>
                 <a href="<%=contextPath%>/dept/delPost.jsp?postId=<%=request.getAttribute("postId")%>"
-                   onclick="if(confirm('你确定要删除这个部门吗？')) return true; else return false;">删除</a>
+                   onclick="if(<%=isCanDelete((Integer) request.getAttribute("postId"))%>) if(confirm('确定删除这个部门吗？')) return true;else  return false; else  if(confirm('部门存在员工，删除失败！！')) return false ;else return false;">删除</a>
             </td>
         </tr>
 
