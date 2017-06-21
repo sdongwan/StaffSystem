@@ -24,18 +24,6 @@
     <base href="<%=basePath%>">
     <title>添加员工信息</title>
     <style type="text/css">
-        .table td {
-            border: solid 1px black;
-
-            margin-top: 0px;
-            margin-bottom: 0px;
-            text-align: center;
-        }
-
-        .table {
-            width: 50%;
-            height: 50%;
-        }
 
         .position {
             float: left;
@@ -43,11 +31,26 @@
             margin-left: 35px;
         }
 
-        .table {
+
+        table {
             position: absolute;
-            margin-top: 10%;
-            margin-left: 15%;
+            border: 1px solid #888888;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 65%;
+            margin-left: 150px;
+            margin-top: 150px;
+
         }
+
+        table td {
+            text-align: center;
+            background-color: #EFEFEF;
+            border: 1px solid #AAAAAA;
+            padding: 5px 15px 5px 5px;
+        }
+
+
 
     </style>
 </head>

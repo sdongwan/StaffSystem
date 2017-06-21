@@ -20,18 +20,13 @@
     String pathParam = request.getSession().getServletContext().getRealPath("");
     List<Post> postLt = MethodUtil.getPosts();
     request.setAttribute("postLt", postLt);
-    String contextPath=request.getServletContext().getContextPath();
+    String contextPath = request.getServletContext().getContextPath();
 %>
 <html>
 <head>
     <base href=<%=basePath%>>
     <title>修改员工信息</title>
     <style type="text/css">
-        .table td {
-            border: solid 1px black;
-            text-align: center;
-
-        }
 
         .position {
             float: left;
@@ -39,11 +34,25 @@
             margin-left: 35px;
         }
 
-        .table {
+        table {
             position: absolute;
-            margin-top: 10%;
-            margin-left: 15%;
+            border: 1px solid #888888;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 65%;
+            margin-left: 150px;
+            margin-top: 150px;
+
         }
+
+        table td {
+            text-align: center;
+            background-color: #EFEFEF;
+            border: 1px solid #AAAAAA;
+            padding: 5px 15px 5px 5px;
+        }
+
+
 
     </style>
 </head>
@@ -53,7 +62,7 @@
 
 
 <form action="<%=contextPath%>/user/upUser.jsp" method="post" enctype="multipart/form-data">
-    <table class="table">
+    <table>
 
         <tr>
             <td>
@@ -204,8 +213,6 @@
         </tr>
 
     </table>
-
-
 </form>
 
 

@@ -6,19 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%
-    String contextPath=request.getServletContext().getContextPath();
+    String contextPath = request.getServletContext().getContextPath();
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
     <title>修改口令</title>
     <style type="text/css">
-        .table td {
-            border: solid 1px black;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            text-align: center;
-        }
 
         .position {
             float: left;
@@ -26,11 +20,25 @@
             margin-left: 35px;
         }
 
-        .table {
+        table {
             position: absolute;
-            margin-top: 10%;
-            margin-left: 15%;
+            border: 1px solid #888888;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 45%;
+            margin-left: 150px;
+            margin-top: 150px;
+
         }
+
+        table td {
+            text-align: center;
+            background-color: #EFEFEF;
+            border: 1px solid #AAAAAA;
+            padding: 5px 15px 5px 5px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -41,6 +49,8 @@
         <tr>
             <td>
                 <label for="admin.adminName">管理员名字</label>
+            </td>
+            <td>
                 <input type="text" name="admin.adminName" id="admin.adminName" value="${admin.adminName}">
             </td>
         </tr>
@@ -48,6 +58,9 @@
         <tr>
             <td>
                 <label for="admin.adminUserName">管理员用户账号</label>
+            </td>
+
+            <td>
                 <input type="text" name="admin.adminUserName" value="${admin.adminUserName}" id="admin.adminUserName">
             </td>
         </tr>
@@ -55,6 +68,8 @@
         <tr>
             <td>
                 <label for="admin.adminPwd">管理员用户密码</label>
+            </td>
+            <td>
                 <input type="text" name="admin.adminPwd" id="admin.adminPwd" value="${admin.adminPwd}">
             </td>
         </tr>
@@ -62,7 +77,10 @@
 
         <tr>
             <td>
-                <input type="reset" value="重置">&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="重置">
+
+            </td>
+            <td>
                 <input type="submit" value="确定">
             </td>
         </tr>

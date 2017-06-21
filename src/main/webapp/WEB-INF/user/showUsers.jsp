@@ -37,12 +37,13 @@
             transform: scale(1.4);
         }
 
-        a {
-            text-decoration: none;
-        }
-
         a:hover {
             color: red;
+        }
+
+        a {
+            text-decoration: none;
+            color: cornflowerblue;
         }
 
         .position {
@@ -51,16 +52,34 @@
             margin-left: 35px;
         }
 
-        .table {
-            position: absolute;
-            margin-top: 10%;
-            margin-left: 15%;
-        }
+        /*.table {*/
+        /*position: absolute;*/
+        /*margin-top: 10%;*/
+        /*margin-left: 15%;*/
+        /*}*/
 
         .addStaff {
             float: right;
             margin-top: 35px;
             margin-right: 35px;
+        }
+
+        table {
+            position: absolute;
+            border: 1px solid #888888;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 65%;
+            margin-left: 150px;
+            margin-top: 150px;
+
+        }
+
+        table td {
+            text-align: center;
+            background-color: #EFEFEF;
+            border: 1px solid #AAAAAA;
+            padding: 5px 15px 5px 5px;
         }
 
 
@@ -78,7 +97,7 @@
         添加新员工
     </a>
 </div>
-<table class="table">
+<table>
     <s:iterator value="userList" var="user">
         <tr>
             <td rowspan="5">

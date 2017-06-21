@@ -10,28 +10,19 @@
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/";
-    String contextPath=request.getServletContext().getContextPath();
+    String contextPath = request.getServletContext().getContextPath();
 %>
 <html>
 <head>
     <base href="<%=basePath%>">
     <title>添加部门</title>
     <style type="text/css">
-        .table td {
-            text-align: center;
-        }
 
         .position {
             float: left;
             position: absolute;
             margin-top: 35px;
             margin-left: 35px;
-        }
-
-        .container {
-            position: absolute;
-            margin-top: 15%;
-            margin-left: 20%;
         }
 
         .btn {
@@ -42,45 +33,77 @@
             color: red;
         }
 
+        table {
+            position: absolute;
+            border: 1px solid #888888;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 45%;
+            margin-left: 150px;
+            margin-top: 150px;
+
+        }
+
+        table td {
+            text-align: center;
+            background-color: #EFEFEF;
+            border: 1px solid #AAAAAA;
+            padding: 5px 15px 5px 5px;
+        }
+
+        .error {
+            margin-left: 150px;
+            margin-top: 100px;
+            position: absolute;
+        }
+
+
     </style>
 </head>
 <body>
 <div class="position"><span>当前位置：添加部门</span></div>
+<div class="error">
 
+    <s:fielderror name="post.postName"/>
+</div>
+<form action="<%=contextPath%>/dept/addPost.jsp" method="post">
 
-<div class="container">
-    <form action="<%=contextPath%>/dept/addPost.jsp" method="post">
-        <table class="table">
-            <tr>
+    <table class="table">
+        <tr>
+            <td>
+                部门名称
+            </td>
+            <td>
 
-                <td colspan="2">
+                <%--<s:textfield name="post.postName" label="部门名称">--%>
 
-                    <s:textfield name="post.postName" label="部门名称">
+                <%--</s:textfield>--%>
 
-                    </s:textfield>
-                </td>
-            </tr>
+                <input type="text" name="post.postName">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    部门介绍：
-                </td>
-                <td>
+        <tr>
+            <td>
+                部门介绍
+            </td>
+            <td>
                 <textarea name="post.postRemark">
 
             </textarea>
-                </td>
-            </tr>
 
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="确定" class="btn">
-                </td>
-            </tr>
+            </td>
+        </tr>
 
-        </table>
-    </form>
-</div>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="确定" class="btn">
+            </td>
+        </tr>
+
+    </table>
+</form>
+
 
 </body>
 </html>
