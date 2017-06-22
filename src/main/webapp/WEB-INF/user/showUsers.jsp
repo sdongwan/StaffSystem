@@ -116,6 +116,7 @@
             position: absolute;
             margin-left: 150px;
             margin-top: 150px;
+            width: 550px;
         }
 
 

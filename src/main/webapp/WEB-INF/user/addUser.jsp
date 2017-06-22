@@ -16,7 +16,7 @@
     String pathParam = request.getSession().getServletContext().getRealPath("");
     List<Post> postLt = MethodUtil.getPosts();
     request.setAttribute("postLt", postLt);
-    String contextPath=request.getServletContext().getContextPath();
+    String contextPath = request.getServletContext().getContextPath();
 %>
 
 <html>
@@ -31,15 +31,23 @@
             margin-left: 35px;
         }
 
+        .container {
+            position: absolute;
+            margin-left: 150px;
+            margin-top: 150px;
+            /*width: 100%;*/
+            width: 550px;
+        }
 
         table {
-            position: absolute;
+            /*position: absolute;*/
             border: 1px solid #888888;
             border-collapse: collapse;
             font-family: Arial, Helvetica, sans-serif;
-            width: 65%;
-            margin-left: 150px;
-            margin-top: 150px;
+            float: left;
+            /*width: 65%;*/
+            /*margin-left: 150px;*/
+            /*margin-top: 150px;*/
 
         }
 
@@ -50,6 +58,11 @@
             padding: 5px 15px 5px 5px;
         }
 
+        .error {
+            position: relative;
+            margin-top: 10px;
+            float: left;
+        }
 
 
     </style>
@@ -59,175 +72,179 @@
 
 <div class="position"><span>当前位置：添加新员工</span></div>
 
-<s:actionerror/>
-<form action="<%=contextPath%>/user/addUser.jsp" method="post" enctype="multipart/form-data">
-    <table class="table">
+<div class="container">
 
-        <tr>
-            <td>
-                <span>员工用户名</span>
-            </td>
 
-            <td>
-                <input type="text" name="user.username"/>
-            </td>
+    <form action="<%=contextPath%>/user/addUser.jsp" method="post" enctype="multipart/form-data">
+        <table class="table">
 
-            <td>
+            <tr>
+                <td>
+                    <span>员工用户名</span>
+                </td>
+
+                <td>
+                    <input type="text" name="user.username"/>
+                </td>
+
+                <td>
                 <span>
                     6-10为英文字母或数字
                 </span>
-            </td>
-        </tr>
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <span>员工密码</span>
-            </td>
-            <td>
-                <input type="text" name="user.userPass">
+            <tr>
+                <td>
+                    <span>员工密码</span>
+                </td>
+                <td>
+                    <input type="text" name="user.userPass">
 
-            </td>
-            <td>
+                </td>
+                <td>
                 <span>
                     6-10为英文字母或数字
                 </span>
-            </td>
-        </tr>
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <span>员工姓名</span>
-            </td>
+            <tr>
+                <td>
+                    <span>员工姓名</span>
+                </td>
 
-            <td>
-                <input type="text" name="user.name">
-            </td>
+                <td>
+                    <input type="text" name="user.name">
+                </td>
 
-            <td>
+                <td>
                 <span>
                     10位以内中文
                 </span>
-            </td>
-        </tr>
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <span>员工性别</span>
-            </td>
+            <tr>
+                <td>
+                    <span>员工性别</span>
+                </td>
 
-            <td>
-                <input type="radio" value="男" name="user.sex" checked="checked">男
-                <input type="radio" value="女" name="user.sex">女
+                <td>
+                    <input type="radio" value="男" name="user.sex" checked="checked">男
+                    <input type="radio" value="女" name="user.sex">女
 
 
-            </td>
-            <td>
+                </td>
+                <td>
                 <span>
                    选择用户性别
                 </span>
-            </td>
+                </td>
 
-        </tr>
+            </tr>
 
-        <tr>
-            <td>
-                <span>出生日期</span>
-            </td>
+            <tr>
+                <td>
+                    <span>出生日期</span>
+                </td>
 
-            <td>
-                <input type="text" name="user.birthday">
+                <td>
+                    <input type="text" name="user.birthday">
 
 
-            </td>
-            <td>
+                </td>
+                <td>
                 <span>
                     格式：YYYY-MM-DD
                 </span>
-            </td>
+                </td>
 
-        </tr>
+            </tr>
 
 
-        <tr>
+            <tr>
 
-            <td>
-                <span>入职日期</span>
-            </td>
+                <td>
+                    <span>入职日期</span>
+                </td>
 
-            <td>
-                <input type="text" name="user.entryDate">
-                <s:fielderror name="user.entryDate"/>
-            </td>
+                <td>
+                    <input type="text" name="user.entryDate">
+                </td>
 
-            <td>
+                <td>
                 <span>
                       格式：YYYY-MM-DD
                 </span>
-            </td>
+                </td>
 
-        </tr>
+            </tr>
 
 
-        <tr>
+            <tr>
 
-            <td>
-                <span>所属部门</span>
-            </td>
+                <td>
+                    <span>所属部门</span>
+                </td>
 
-            <td>
-                <select name="postId">
-                    <option value="0">
-                        选择部门....
-                    </option>
-
-                    <c:forEach items="${postLt}" var="post">
-                        <option value="${post.postId}">
-                                ${post.postName}
+                <td>
+                    <select name="postId">
+                        <option value="0">
+                            选择部门....
                         </option>
-                    </c:forEach>
 
-                </select>
-            </td>
-            <td>
+                        <c:forEach items="${postLt}" var="post">
+                            <option value="${post.postId}">
+                                    ${post.postName}
+                            </option>
+                        </c:forEach>
+
+                    </select>
+                </td>
+                <td>
                 <span>
                    选择所在部门
                 </span>
-            </td>
-        </tr>
+                </td>
+            </tr>
 
 
-        <tr>
-            <td>
-                <span>员工图片</span>
-            </td>
-            <td colspan="2">
-                <input type="file" name="file">
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <span>员工图片</span>
+                </td>
+                <td colspan="2">
+                    <input type="file" name="file">
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <span>个人简介</span>
-            </td>
-            <td colspan="2">
+            <tr>
+                <td>
+                    <span>个人简介</span>
+                </td>
+                <td colspan="2">
                 <textarea name="user.remark" cols="40" rows="5">
 
                 </textarea>
-            </td>
-        </tr>
+                </td>
+            </tr>
 
 
-        <tr>
-            <td colspan="3">
-                <input type="reset" value="重置">
-                <input type="submit" value="确定">
-            </td>
+            <tr>
+                <td colspan="3">
+                    <input type="reset" value="重置">
+                    <input type="submit" value="确定">
+                </td>
 
-        </tr>
+            </tr>
 
-    </table>
+        </table>
 
-</form>
-
+    </form>
+    <div class="error">
+        <s:fielderror name="user.name"/>
+    </div>
+</div>
 </body>
 </html>
