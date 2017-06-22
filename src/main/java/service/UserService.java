@@ -24,4 +24,9 @@ public interface UserService {
     List<User> showByUserName(String userName);
 
     boolean isUpdate(User user);
+
+    List<User> showUsersByPage(int pageNo, int pageSize);
+
+    int getUserCount();
+
 }

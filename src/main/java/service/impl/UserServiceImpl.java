@@ -69,4 +69,13 @@ public class UserServiceImpl implements UserService {
 
         return flag;
     }
+
+    public List<User> showUsersByPage(int pageNo, int pageSize) {
+
+        return userDao.findAllUserByPage(pageNo, pageSize);
+    }
+
+    public int getUserCount() {
+        return userDao.getUserCount();
+    }
 }
