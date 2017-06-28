@@ -24,6 +24,7 @@ public class AddUserAction extends ActionSupport {
     private User user;
 
     private File file;
+
     private String fileFileName;
 
     @Autowired

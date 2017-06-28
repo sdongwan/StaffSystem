@@ -21,18 +21,19 @@
         </field-validator>
     </field>
     <field name="user.birthday">
-        <field-validator type="requiredstring">
+        <field-validator type="required">
             <message>请填写用户生日</message>
         </field-validator>
     </field>
     <field name="user.entryDate">
-        <field-validator type="requiredstring">
+        <field-validator type="required">
+
             <message>请填写用户入职日期</message>
         </field-validator>
     </field>
 
-    <field name="user.post">
-        <field-validator type="requiredstring">
+    <field name="postId">
+        <field-validator type="required">
             <message>请选择用户部门</message>
         </field-validator>
     </field>

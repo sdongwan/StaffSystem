@@ -13,7 +13,7 @@
 %>
 <html>
 <base href="<%=basePath%>"/>
-
+<title>博客后台管理系统</title>
 
 <frameset border=0 frameSpacing=0 rows="60, *,40" frameBorder=0>
     <frame name=header src="<%=contextPath%>/admin/header.jsp" frameBorder=0 noResize scrolling=no>
@@ -24,6 +24,10 @@
     <frame name="footer" src="<%=contextPath%>/admin/footer.jsp" frameborder="0" scrolling="no">
 </frameset>
 <noframes>
+    <body>
+    你的浏览器不兼容frame
+
+    </body>
 </noframes>
 
 </html>
