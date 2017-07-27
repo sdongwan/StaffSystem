@@ -4,6 +4,9 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
 
+
+
+
     <package name="user" extends="struts-default" namespace="/dept">
         <action name="showDepts" class="action.ShowPostsAction">
             <result name="success">/WEB-INF/dept/showDepts.jsp</result>

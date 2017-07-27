@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
-        "http://struts.apache.org/dtds/struts-2.5.dtd">
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
     <!--开启动态方法调用-->
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
-    <!--设置后缀-->
+    <!--设置url后缀-->
     <constant name="struts.action.extension" value="action,jsp"/>
 
     <!--struts交给spring控制生成bean-->
     <constant name="struts.objectFactory" value="spring"/>
 
-    <package name="default" extends="struts-default" namespace="/">
+
+    <!--定义一个json包，添加两个result-types-->
+    <package name="json" extends="struts-default">
+        <result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+        <interceptors>
+            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+        </interceptors>
+    </package>
+
+
+    <!--继承json包，本应该直接继承json-default包，不过出现问题，就直接在这个文件中定义一个包-->
+    <package name="default" extends="json" namespace="/">
 
         <default-action-ref name="default"/>
 
@@ -32,6 +45,15 @@
         <action name="adminValide" class="action.AdminLoginAction" method="adminLogin">
             <result name="success">/WEB-INF/admin/index.jsp</result>
             <result name="input">/login.jsp</result>
+        </action>
+
+
+        <action name="returnJson" class="action.ReturnJsonAction">
+            <result type="json">
+                <param name="root">dataMap</param>
+                <param name="excludeNullProperties">true</param>
+                <param name="noCache">true</param>
+            </result>
         </action>
 
 

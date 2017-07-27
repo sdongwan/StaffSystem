@@ -42,7 +42,7 @@
 
         <action name="delUser" class="action.DelUserAction">
             <result name="success" type="chain">showUsers</result>
-            <result name="input">/error.jsp</result>
+            <result name="input">/WEB-INF/error.jsp</result>
         </action>
 
 

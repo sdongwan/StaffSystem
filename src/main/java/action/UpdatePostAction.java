@@ -34,9 +34,7 @@ public class UpdatePostAction extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-        boolean flag = postService.isUpdate(post);
-        System.out.println(flag);
-        System.out.println(post.getPostName());
+
         if (postService.isUpdate(post)) {
             Post p = postService.showByPostId(post.getPostId());
             p.setPostName(post.getPostName());

@@ -36,7 +36,7 @@
         </action>
 
 
-        <action name="upload" class="action.UpLoadPhotoAction">
+        <action name="upload" class="action.UploadPhotoAction">
             <result name="success">/WEB-INF/upload/${photo}</result>
         </action>
 

@@ -2,6 +2,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="entity">
+
     <class name="Admin" table="admin">
         <id name="adminId" type="java.lang.Integer">
             <column name="adminId"/>
@@ -22,7 +23,7 @@
         </property>
 
         <property name="adminPwd" type="java.lang.String">
-            <column name="adminPwd" not-null="true">
+            <column name="adminPwd" not-null="true" >
                 <comment>管理员密码</comment>
             </column>
         </property>

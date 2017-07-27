@@ -5,7 +5,7 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * Created by Administrator on 2017/6/12.
  */
-public class UpLoadPhotoAction extends ActionSupport {
+public class UploadPhotoAction extends ActionSupport {
     private static final long serialVersionUID = 5484181688105435744L;
     private String photo;
 

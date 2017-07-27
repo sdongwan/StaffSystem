@@ -29,6 +29,7 @@ public class AddUserAction extends ActionSupport {
 
     @Autowired
     private PostService postService;
+
     private String postId;
 
     public File getFile() {

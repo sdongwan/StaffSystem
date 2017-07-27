@@ -19,8 +19,9 @@
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
-            <version>2.5.1</version>
+            <version>2.1.8</version>
         </dependency>
+
 
 
         <!-- xwork-core包 -->
@@ -34,10 +35,20 @@
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-convention-plugin</artifactId>
-            <version>2.5.1</version>
+            <version>2.1.8</version>
         </dependency>
 
         <!-- struts框架包结束  -->
+
+
+
+
+        <!-- json转换包   使用高版本的包出现过问题，就是用了低版本的json包-->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-json-plugin</artifactId>
+            <version>2.1.8</version>
+        </dependency>
 
 
 
@@ -106,8 +117,9 @@
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-spring-plugin</artifactId>
-            <version>2.5.5</version>
+            <version>2.1.8</version>
         </dependency>
+
 
 
         <!--javassist包 -->
@@ -153,8 +165,6 @@
             <artifactId>log4j</artifactId>
             <version>1.2.9</version>
         </dependency>
-
-
 
 
     </dependencies>

@@ -4,7 +4,9 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>/login.jsp</welcome-file>
+        <welcome-file>/login.action</welcome-file>
+        <welcome-file>/login.js</welcome-file>
     </welcome-file-list>
 
 
@@ -45,11 +47,14 @@
     <!--配置struts的核心fliter -->
     <filter>
         <filter-name>struts2</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+
+        <!--org.apache.struts2.dispatcher.ng.filter-->
         <init-param>
             <param-name>config</param-name>
             <param-value>struts-default.xml,config/struts.xml,struts-plugin.xml</param-value>
         </init-param>
+
     </filter>
     <filter-mapping>
         <filter-name>struts2</filter-name>

@@ -137,7 +137,7 @@
             outline: none;
             padding: 10px;
             font-size: 13px;
-            color: #fff;
+            color: #000;
             /*text-shadow: 1px 1px 1px;*/
             border-top: 1px solid #312E3D;
             border-left: 1px solid #312E3D;
@@ -161,7 +161,6 @@
             border-radius: 5px;
             margin: 5px;
         }
-
 
 
     </style>
@@ -191,13 +190,12 @@
         <input type="text" required="required" placeholder="管理员名字" name="admin.adminName"></input>
         <input type="password" required="required" placeholder="管理员用户账号" name="admin.adminUserName"></input>
         <input type="password" required="required" placeholder="管理员用户密码" name="admin.adminPwd"></input>
-        <button class="but" type="submit">登录</button>
+        <button class="but" type="submit">注册</button>
         <button class="but" type="reset">重置</button>
 
     </form>
-    <a:actionerror/>
+    <p><a:actionerror/></p>
 </div>
-<s:actionerror/>
 
 
 <div id="footer">CopyRight@copy2017</div>

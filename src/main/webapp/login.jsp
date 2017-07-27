@@ -135,7 +135,7 @@
             outline: none;
             padding: 10px;
             font-size: 13px;
-            color: #fff;
+            color: #000;
             /*text-shadow: 1px 1px 1px;*/
             border-top: 1px solid #312E3D;
             border-left: 1px solid #312E3D;
